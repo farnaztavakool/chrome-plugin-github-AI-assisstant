@@ -1,0 +1,115 @@
+#github-ai-sidebar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background-color: #0d1117; /* GitHub Dark Dimmed */
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  z-index: 999999;
+  transition: height 0.3s;
+}
+
+#github-ai-sidebar.collapsed {
+  height: 50px;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 10px 15px;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#toggle-btn {
+  background: none;
+  border: none;
+  color: #c9d1d9;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sidebar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#chat-history {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  max-width: 85%;
+}
+
+.message.user {
+  background-color: #1f6feb;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message.ai {
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+}
+
+.message.system {
+  font-style: italic;
+  color: #8b949e;
+  text-align: center;
+  max-width: 100%;
+}
+
+.input-area {
+  padding: 10px;
+  border-top: 1px solid #30363d;
+  display: flex;
+  gap: 10px;
+  background-color: #161b22;
+}
+
+#user-input {
+  flex: 1;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  padding: 8px;
+  resize: none;
+  height: 40px;
+}
+
+#send-btn {
+  background-color: #238636;
+  color: white;
+  border: 1px solid rgba(240,246,252,0.1);
+  border-radius: 6px;
+  padding: 0 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#send-btn:hover {
+  background-color: #2ea043;
+}

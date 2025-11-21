@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub AI Assistant",
+  "version": "1.0",
+  "description": "AI chat sidebar for GitHub that can navigate and modify the DOM.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "action": {
+    "default_title": "Toggle GitHub AI Sidebar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["contentScript.js"],
+      "css": []
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidebar/sidebar.html",
+        "sidebar/sidebar.css",
+        "sidebar/sidebar.js",
+        "utils/extractGithubContext.js",
+        "actions/pageActions.js",
+        "actions/execute.js"
+      ],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}
